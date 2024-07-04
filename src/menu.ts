@@ -1,7 +1,7 @@
-const root = document.getElementById('root')!;
+const root = document.querySelector('#root')!;
 
-const anchorTags = (): string => {
-  let result = '<a href="#">메뉴</a>';
+const anchorTags = (href: string, textNode: string): string => {
+  let result = `<a href="${href}">${textNode}</a>`;
   return result;
 };
 
@@ -12,6 +12,6 @@ const liTags = (children: string): string => {
 
 root.innerHTML = `
 <ul>
-  ${liTags(anchorTags())}
+  ${liTags(anchorTags('#YS', '연승'))}
 </ul>
 `;
