@@ -1,4 +1,4 @@
-const root = document.querySelector('#root')!;
+const root = document.getElementById('root') as HTMLDivElement;
 
 const anchorTags = (href: string, textNode: string): string => {
   let result = `<a href="${href}">${textNode}</a>`;
@@ -10,8 +10,13 @@ const liTags = (children: string): string => {
   return result;
 };
 
+const totalElement = () => {
+  let result = liTags(anchorTags('#YS', '연승'));
+  return result;
+};
+
 root.innerHTML = `
 <ul>
-  ${liTags(anchorTags('#YS', '연승'))}
+  ${totalElement()}
 </ul>
 `;
